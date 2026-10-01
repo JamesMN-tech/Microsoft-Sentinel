@@ -1,0 +1,6 @@
+// Status: UNTESTED STARTER — not executed in the documented lab.
+// Required table: ThreatIntelIndicators; verify table access and ingestion before running.
+// Purpose and interpretation: see ../README.md.
+ThreatIntelIndicators
+| where TimeGenerated >= ago(7d)
+| summarize Records=count(), LatestRecord=max(TimeGenerated)

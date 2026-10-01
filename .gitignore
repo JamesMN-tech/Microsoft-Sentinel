@@ -1,0 +1,18 @@
+# Local report generation and QA artifacts
+.report-build/
+/Microsoft Sentinel Data Ingestion Lab Report.docx
+
+# Local machine and editor files
+.DS_Store
+~$*.docx
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key

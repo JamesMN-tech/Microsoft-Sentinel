@@ -1,0 +1,8 @@
+// Status: UNTESTED STARTER — not executed in the documented lab.
+// Required table: SigninLogs; verify table access and ingestion before running.
+// Purpose and interpretation: see ../README.md.
+SigninLogs
+| where TimeGenerated >= ago(24h)
+| where ResultType != "0"
+| summarize FailedAttempts=count(), DistinctIPs=dcount(IPAddress), LastSeen=max(TimeGenerated) by UserPrincipalName, AppDisplayName
+| order by FailedAttempts desc

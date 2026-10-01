@@ -1,0 +1,6 @@
+// Status: UNTESTED STARTER — not executed in the documented lab.
+// Required table: AuditLogs; verify table access and ingestion before running.
+// Purpose and interpretation: see ../README.md.
+AuditLogs
+| where TimeGenerated >= ago(24h)
+| summarize Records=count(), LatestRecord=max(TimeGenerated)
